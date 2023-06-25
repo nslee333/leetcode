@@ -18,7 +18,7 @@ func TestTwoSum(t *testing.T) {
 		}
 	})
 
-	t.Run("checks for correct output with example 1 input", func(t *testing.T) {
+	t.Run("checks for correct output with example 2 input", func(t *testing.T) {
 		nums := []int{3, 2, 4}
 		target := 6
 
@@ -30,7 +30,7 @@ func TestTwoSum(t *testing.T) {
 		}
 	})
 
-	t.Run("checks for correct output with example 1 input", func(t *testing.T) {
+	t.Run("checks for correct output with example 3 input", func(t *testing.T) {
 		nums := []int{3, 3}
 		target := 6
 
@@ -42,7 +42,7 @@ func TestTwoSum(t *testing.T) {
 		}
 	})
 
-	t.Run("checks for correct output with example 1 input", func(t *testing.T) {
+	t.Run("checks for correct output with duplicate ints in input", func(t *testing.T) {
 		nums := []int{3, 3, 3, 3, 3, 1}
 		target := 6
 
