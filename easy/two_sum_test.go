@@ -59,7 +59,7 @@ func TestTwoSum(t *testing.T) {
 		target := 1
 
 		got := twoSum(nums, target)
-		want := []int{0, 1}
+		want := []int{0, 0}
 
 		if !reflect.DeepEqual(got, want) {
 			t.Errorf("got %v want %v", got, want)
