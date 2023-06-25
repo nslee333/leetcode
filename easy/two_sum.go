@@ -20,17 +20,19 @@ func twoSum(nums []int, target int) []int {
 	result := make([]int, 0)
 
 	for i := range nums {
-		if reflect.TypeOf(nums[i+1]) != int; return make([]int,0)
-		// & Trying to get this line to work. :-)
-		
-		num := nums[i]
-		num2 := nums[i+1]
 
+		if i < len(nums)-1 {
+			num := nums[i]
+			num2 := nums[i+1]
 
-		if num+num2 == target {
-			return append(result, i, i+1)
+			if num+num2 == target {
+				return append(result, i, i+1)
+			} else {
+				continue
+			}
+
 		} else {
-			continue
+			return []int{0, 0}
 		}
 	}
 
