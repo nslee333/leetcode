@@ -77,4 +77,27 @@ func TestTwoSum(t *testing.T) {
 			t.Errorf("got %v want %v, nums %v, target %v", got, want, nums, target)
 		}
 	})
+	t.Run("two possible answers", func(t *testing.T) {
+		nums := []int{3, 2, 3}
+		target := 6
+
+		got := twoSum(nums, target)
+		want := []int{0, 2}
+
+		if !reflect.DeepEqual(got, want) {
+			t.Errorf("got %v want %v, nums %v, target %v", got, want, nums, target)
+		}
+	})
+
+	t.Run("broken test case", func(t *testing.T) {
+		nums := []int{2, 5, 5, 11}
+		target := 10
+
+		got := twoSum(nums, target)
+		want := []int{1, 2}
+
+		if !reflect.DeepEqual(got, want) {
+			t.Errorf("got %v want %v, nums %v, target %v", got, want, nums, target)
+		}
+	})
 }
