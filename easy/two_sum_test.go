@@ -14,7 +14,7 @@ func TestTwoSum(t *testing.T) {
 		want := []int{0, 1}
 
 		if !reflect.DeepEqual(got, want) {
-			t.Errorf("got %v want %v", got, want)
+			t.Errorf("got %v want %v, nums %v", got, want, nums)
 		}
 	})
 
@@ -26,7 +26,7 @@ func TestTwoSum(t *testing.T) {
 		want := []int{1, 2}
 
 		if !reflect.DeepEqual(got, want) {
-			t.Errorf("got %v want %v", got, want)
+			t.Errorf("got %v want %v, nums %v", got, want, nums)
 		}
 	})
 
@@ -38,7 +38,7 @@ func TestTwoSum(t *testing.T) {
 		want := []int{0, 1}
 
 		if !reflect.DeepEqual(got, want) {
-			t.Errorf("got %v want %v", got, want)
+			t.Errorf("got %v want %v, nums %v", got, want, nums)
 		}
 	})
 
@@ -50,7 +50,7 @@ func TestTwoSum(t *testing.T) {
 		want := []int{0, 1}
 
 		if !reflect.DeepEqual(got, want) {
-			t.Errorf("got %v want %v", got, want)
+			t.Errorf("got %v want %v, nums %v", got, want, nums)
 		}
 	})
 
@@ -62,7 +62,7 @@ func TestTwoSum(t *testing.T) {
 		want := []int{0, 0}
 
 		if !reflect.DeepEqual(got, want) {
-			t.Errorf("got %v want %v", got, want)
+			t.Errorf("got %v want %v, nums %v", got, want, nums)
 		}
 	})
 
@@ -74,7 +74,7 @@ func TestTwoSum(t *testing.T) {
 		want := []int{0, 2}
 
 		if !reflect.DeepEqual(got, want) {
-			t.Errorf("got %v want %v", got, want)
+			t.Errorf("got %v want %v, nums %v", got, want, nums)
 		}
 	})
 }
