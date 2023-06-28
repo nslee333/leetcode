@@ -29,10 +29,7 @@ func twoSum(nums []int, target int) []int {
 					continue
 				}
 
-				num1 := nums[i]
-				num2 := nums[j]
-
-				if num1+num2 == target {
+				if nums[i]+nums[j] == target {
 
 					if i < j {
 						res := append(result, i, j)
