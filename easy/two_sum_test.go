@@ -14,7 +14,7 @@ func TestTwoSum(t *testing.T) {
 		want := []int{0, 1}
 
 		if !reflect.DeepEqual(got, want) {
-			t.Errorf("got %v want %v, nums %v", got, want, nums)
+			t.Errorf("got %v want %v, nums %v, target %v", got, want, nums, target)
 		}
 	})
 
@@ -26,7 +26,7 @@ func TestTwoSum(t *testing.T) {
 		want := []int{1, 2}
 
 		if !reflect.DeepEqual(got, want) {
-			t.Errorf("got %v want %v, nums %v", got, want, nums)
+			t.Errorf("got %v want %v, nums %v, target %v", got, want, nums, target)
 		}
 	})
 
@@ -38,7 +38,7 @@ func TestTwoSum(t *testing.T) {
 		want := []int{0, 1}
 
 		if !reflect.DeepEqual(got, want) {
-			t.Errorf("got %v want %v, nums %v", got, want, nums)
+			t.Errorf("got %v want %v, nums %v, target %v", got, want, nums, target)
 		}
 	})
 
@@ -50,11 +50,11 @@ func TestTwoSum(t *testing.T) {
 		want := []int{0, 1}
 
 		if !reflect.DeepEqual(got, want) {
-			t.Errorf("got %v want %v, nums %v", got, want, nums)
+			t.Errorf("got %v want %v, nums %v, target %v", got, want, nums, target)
 		}
 	})
 
-	t.Run("checks for proper panic error handling by giving nums and target that don't match", func(t *testing.T) {
+	t.Run("checks for proper error handling by giving nums and target that don't match", func(t *testing.T) {
 		nums := []int{3, 3, 3, 3, 3}
 		target := 1
 
@@ -62,11 +62,11 @@ func TestTwoSum(t *testing.T) {
 		want := []int{0, 0}
 
 		if !reflect.DeepEqual(got, want) {
-			t.Errorf("got %v want %v, nums %v", got, want, nums)
+			t.Errorf("got %v want %v, nums %v, target %v", got, want, nums, target)
 		}
 	})
 
-	t.Run("checks for proper panic error handling by giving nums and target that don't match", func(t *testing.T) {
+	t.Run("two possible answers", func(t *testing.T) {
 		nums := []int{3, 2, 3}
 		target := 6
 
@@ -74,7 +74,7 @@ func TestTwoSum(t *testing.T) {
 		want := []int{0, 2}
 
 		if !reflect.DeepEqual(got, want) {
-			t.Errorf("got %v want %v, nums %v", got, want, nums)
+			t.Errorf("got %v want %v, nums %v, target %v", got, want, nums, target)
 		}
 	})
 }
