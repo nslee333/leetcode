@@ -21,20 +21,37 @@ func twoSum(nums []int, target int) []int {
 
 	for i := range nums {
 
-		if i < len(nums)-1 {
-			num := nums[i]
-			num2 := nums[i+1]
+		for j := range nums {
 
-			if num+num2 == target {
-				return append(result, i, i+1)
-			} else {
-				continue
+			if j < len(nums)-1 {
+
+				if i == j {
+					continue
+				}
+
+				num1 := nums[i]
+				num2 := nums[j]
+
+				if num1+num2 == target {
+
+					if i < j {
+						res := append(result, i, j)
+						return res
+
+					} else {
+						res := append(result, j, i)
+						return res
+					}
+
+				} else {
+					continue
+				}
 			}
+		}
 
-		} else {
-			return []int{0, 0}
+		if i == len(nums)-1 {
+			return append(result, 0, 0)
 		}
 	}
-
 	return result
 }
