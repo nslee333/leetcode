@@ -30,4 +30,14 @@ func TestIsValid(t *testing.T) {
 			t.Errorf("got %v, want %v, str %v ", got, want, str)
 		}
 	})
+
+	t.Run("single value returns false", func(t *testing.T) {
+		str := "("
+		want := false
+		got := isValid(str)
+
+		if got != want {
+			t.Errorf("got %v, want %v, str %v ", got, want, str)
+		}
+	})
 }
