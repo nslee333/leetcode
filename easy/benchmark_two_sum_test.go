@@ -1,4 +1,4 @@
-package two_sum
+package easy
 
 import "testing"
 
