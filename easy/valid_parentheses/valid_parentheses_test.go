@@ -3,68 +3,26 @@ package easy
 import "testing"
 
 func TestIsValid(t *testing.T) {
-	t.Run("Ex. 1", func(t *testing.T) {
-		str := "()"
-		want := true
-		got := isValid(str)
+
+	cases := []struct {
+		str  string
+		want bool
+	}{
+		{str: "()", want: true},
+		{str: "(())", want: true},
+		{str: "()())", want: false},
+		{str: "(())()))", want: false},
+		{str: "()[]{}", want: true},
+		{str: "(]", want: false},
+		{str: "(", want: false},
+	}
+
+	for _, c := range cases {
+		got := isValid(c.str)
+		want := c.want
 
 		if got != want {
-			t.Errorf("got %v, want %v, str %v ", got, want, str)
+			t.Errorf("got %v, want %v, str %v", got, want, c.str)
 		}
-	})
-	t.Run("Ex. 1 modified", func(t *testing.T) {
-		str := "(())"
-		want := true
-		got := isValid(str)
-
-		if got != want {
-			t.Errorf("got %v, want %v, str %v ", got, want, str)
-		}
-	})
-	t.Run("Ex. 1 modified", func(t *testing.T) {
-		str := "()())"
-		want := false
-		got := isValid(str)
-
-		if got != want {
-			t.Errorf("got %v, want %v, str %v ", got, want, str)
-		}
-	})
-	t.Run("Ex. 1 modified", func(t *testing.T) {
-		str := "(())()))"
-		want := false
-		got := isValid(str)
-
-		if got != want {
-			t.Errorf("got %v, want %v, str %v ", got, want, str)
-		}
-	})
-	t.Run("Ex. 2", func(t *testing.T) {
-		str := "()[]{}"
-		want := true
-		got := isValid(str)
-
-		if got != want {
-			t.Errorf("got %v, want %v, str %v ", got, want, str)
-		}
-	})
-	t.Run("Ex. 3", func(t *testing.T) {
-		str := "(]"
-		want := false
-		got := isValid(str)
-
-		if got != want {
-			t.Errorf("got %v, want %v, str %v ", got, want, str)
-		}
-	})
-
-	t.Run("single value returns false", func(t *testing.T) {
-		str := "("
-		want := false
-		got := isValid(str)
-
-		if got != want {
-			t.Errorf("got %v, want %v, str %v ", got, want, str)
-		}
-	})
+	}
 }
