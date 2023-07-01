@@ -18,7 +18,7 @@ func TestPalindrome(t *testing.T) {
 		t.Run(c.name, func(t *testing.T) {
 			got := isPalindrome(c.input)
 			if got != c.expected {
-				t.Errorf("got %v, expected %v", got, c.expected)
+				t.Errorf("got %v, expected %v, input %v", got, c.expected, c.input)
 			}
 		})
 	}
