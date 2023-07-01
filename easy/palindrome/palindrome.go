@@ -1,5 +1,11 @@
 package easy
 
+import (
+	"reflect"
+	"strconv"
+	"strings"
+)
+
 /*
 
 Given an integer `x`, return true if x is a palindrome, and false if otherwise.
@@ -14,5 +20,17 @@ Ex 1:
 */
 
 func isPalindrome(x int) bool {
-	return false
+	s := strconv.FormatInt(int64(x), 10)
+	slice := strings.Split(s, "")
+	target := make([]string, 0)
+
+	for i := len(slice) - 1; i >= 0; i-- {
+		target = append(target, slice[i])
+	}
+
+	if reflect.DeepEqual(slice, target) {
+		return true
+	} else {
+		return false
+	}
 }
