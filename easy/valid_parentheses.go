@@ -20,7 +20,7 @@ import (
 	* 2. Loop over the slice. X
 	* 3. Check that bracket is closed with a matching bracket, in the correct order.
 		& Bracket is closed.
-		& Bracket is closed with the correct bracket.
+		& Bracket is closed + with the correct bracket.
 		& In the correct order.
 
 
@@ -33,24 +33,49 @@ import (
 
 func isValid(s string) bool {
 
-	result := false
+	var stack []string
 	slice := strings.Split(s, "")
 
-	// If an odd number of elements, return false
-	if len(slice)%3 != 1 {
-		return result
-	}
-
 	for i := range slice {
-		check := slice[i]
-		//
+		if slice[i] == `(` {
+			stack = append(stack, slice[i])
 
-		for j := 0; j < len(slice); j++ {
-			if slice[j] == check {
-				result = true
+		} else if slice[i] == `{` {
+			stack = append(stack, slice[i])
+
+		} else if slice[i] == `[` {
+			stack = append(stack, slice[i])
+
+		} else if slice[i] == `)` {
+
+			if stack[0] == `(` {
+				// fmt.Println(len(stack))
+				// fmt.Println(stack[0])
+				// fmt.Println(stack[1:])
+				copy(stack[i:], stack[i+1:])
+				stack = stack[:len(stack)-1]
+
+				// & Stopped at trying to get a version of .pop working.
+			}
+
+		} else if slice[i] == `}` {
+
+			if stack[0] == `{` {
+				stack = stack[0:]
+			}
+
+		} else if slice[i] == `]` {
+
+			if stack[0] == `[` {
+				stack = stack[1:]
 			}
 		}
-
 	}
-	return result
+
+	if len(stack) == 0 {
+		return true
+	} else {
+		return false
+	}
+
 }
