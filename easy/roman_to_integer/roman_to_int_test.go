@@ -14,7 +14,7 @@ func TestRomanToInt(t *testing.T) {
 	}
 
 	for _, c := range cases {
-		t.Run(c.testName, func(*testing.T) {
+		t.Run(c.testName, func(t *testing.T) {
 			got := romanToInt(c.input)
 			want := c.output
 
