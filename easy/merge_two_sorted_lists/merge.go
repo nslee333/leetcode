@@ -1,5 +1,5 @@
 package easy
 
-func Merge() []int {
+func Merge(input1, input2 []int) []int {
 	return make([]int, 0)
 }
