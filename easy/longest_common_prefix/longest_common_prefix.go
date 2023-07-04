@@ -14,27 +14,42 @@ If no common prefix, return an empty string
 
 */
 
-func longestCommonPrefix(input []string) string {
-	pos := make([]string, 0)
+// &
 
-	f := strings.Split(input[0], "")
-	result := f[0]
+func longestCommonPrefix(input []string) string {
+	result := ""
 
 	for i := range input {
-		temp := input[i]
-		if i < len(input)-1 {
-			if input[i+1] == temp {
+		temp := make([]string, 0)
 
-				// & set temp = input[0] -> compare to input[1]
-				// & if true - continue and append.
-				// & if false, return temp as result
+		if i < len(input)-1 {
+			first := strings.Split(input[i], "")
+			second := strings.Split(input[i+1], "")
+
+			if 0 < len(first)-1 && 0 < len(second)-1 && first[0] == second[0] {
+				for j := range first {
+
+					if j < len(input)-1 && first[j] == second[j] {
+						temp = append(temp, first[j])
+						continue
+
+					} else {
+						break
+					}
+
+				}
+
 			}
 
+			result = strings.Join(temp, "")
+		} else if len(input) == 1 {
+			result = input[i]
+		} else if i < len(input)-1 && input[i] != input[i+1] {
+			result = ""
 		}
-		result += temp
+		return result
 	}
 
-	result = strings.Join(pos, "")
 	fmt.Println(result)
 	return result
 }
