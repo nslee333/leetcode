@@ -1,6 +1,9 @@
 package easy
 
-import "strings"
+import (
+	"fmt"
+	"strings"
+)
 
 /*
 
@@ -12,24 +15,26 @@ If no common prefix, return an empty string
 */
 
 func longestCommonPrefix(input []string) string {
-	result := ""
+	pos := make([]string, 0)
+
+	f := strings.Split(input[0], "")
+	result := f[0]
 
 	for i := range input {
-		pos := ""
-
+		temp := input[i]
 		if i < len(input)-1 {
-			first := strings.Split(input[i], "")
-			second := strings.Split(input[i+1], "")
+			if input[i+1] == temp {
 
-			if first[i] == second[i] {
-
-			} else {
-				break
+				// & set temp = input[0] -> compare to input[1]
+				// & if true - continue and append.
+				// & if false, return temp as result
 			}
 
 		}
-
+		result += temp
 	}
 
+	result = strings.Join(pos, "")
+	fmt.Println(result)
 	return result
 }
