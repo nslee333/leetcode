@@ -11,6 +11,7 @@ func TestLongestCommonPrefix(t *testing.T) {
 	}{
 		{testName: "Ex.1", input: []string{"flower", "flow", "flight"}, output: "fl"},
 		{testName: "Ex.2", input: []string{"dog", "racecar", "car"}, output: ""},
+		{testName: "Ex.3", input: []string{"a"}, output: "a"},
 	}
 
 	for _, c := range cases {
