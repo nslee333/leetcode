@@ -16,10 +16,10 @@ func TestBinarySearch(t *testing.T) {
 
 	for _, c := range cases {
 		t.Run(c.testName, func(t *testing.T) {
-			got := binarySearch(c.inputArr, c.target)
+			got := binary_search(c.inputArr, c.target)
 
 			if got != c.expected {
-				t.Errorf("Got %v, expected %v, inputArr %v, target %v", got, c.expected, c.target)
+				t.Errorf("Got %v, expected %v, inputArr %v, target %v", got, c.expected, c.inputArr, c.target)
 			}
 		})
 	}
