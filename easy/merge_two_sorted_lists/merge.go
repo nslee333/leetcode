@@ -22,5 +22,4 @@ func Merge(input1, input2 []int) []int {
 		result = append(result, input2[i])
 	}
 
-	sort
 }
