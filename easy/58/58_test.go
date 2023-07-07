@@ -32,6 +32,10 @@ func TestLength2(t *testing.T) {
 		{testName: "Ex.1", inputStr: "Hello World", expected: 5},
 		{testName: "Ex.2", inputStr: "   fly me   to   the moon  ", expected: 4},
 		{testName: "Ex.3", inputStr: "luffy is still joyboy", expected: 6},
+		{testName: "Ex.4", inputStr: "a", expected: 1},
+		{testName: "Ex.5", inputStr: "a ", expected: 1},
+		{testName: "Ex.6", inputStr: " a", expected: 1},
+		{testName: "Ex.7", inputStr: "b a ", expected: 1},
 	}
 
 	for _, c := range cases {
