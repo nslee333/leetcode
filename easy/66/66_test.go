@@ -14,6 +14,7 @@ func TestLength(t *testing.T) {
 		{testName: "Ex.1", nums: []int{1, 2, 3}, expected: []int{1, 2, 4}},
 		{testName: "Ex.2", nums: []int{4, 3, 2, 1}, expected: []int{4, 3, 2, 2}},
 		{testName: "Ex.3", nums: []int{9}, expected: []int{1, 0}},
+		{testName: "Ex.4", nums: []int{9, 9}, expected: []int{1, 0, 0}},
 	}
 
 	for _, c := range cases {
