@@ -19,7 +19,12 @@ func TestMerge(t *testing.T) {
 
 	for _, c := range cases {
 		t.Run(c.testName, func(t *testing.T) {
-			result := Merge(c.input1, c.input2)
+			l1 := createLinkedList(c.input1)
+			l2 := createLinkedList(c.input2)
+
+			temp := mergeTwoLists(l1, l2)
+
+			result := linkedListToArr(temp)
 
 			if !reflect.DeepEqual(result, c.expected) {
 				t.Errorf("result %v, expected %v, input 1 %v, input 2 %v", result, c.expected, c.input1, c.input2)
