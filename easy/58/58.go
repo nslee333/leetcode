@@ -9,3 +9,7 @@ func lengthOfLastWord(s string) int {
 	str := strings.Split(trimmedStr, " ")
 	return len((str[len(str)-1]))
 }
+
+func lengthOfLastWord2(s string) int {
+	return 0
+}
