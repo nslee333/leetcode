@@ -12,7 +12,7 @@ func TestRemove(t *testing.T) {
 		expected  int
 	}{
 		{testName: "Ex.1", inputNums: []int{3, 2, 2, 3}, inputVal: 3, expected: 2},
-		{testName: "Ex.2", inputNums: []int{0, 0, 1, 1, 1, 2, 2, 3, 3, 4}, inputVal: 2, expected: 5},
+		{testName: "Ex.2", inputNums: []int{0, 1, 2, 2, 3, 0, 4, 2}, inputVal: 2, expected: 5},
 	}
 
 	for _, c := range cases {
