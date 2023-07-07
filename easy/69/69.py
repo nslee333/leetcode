@@ -1,10 +1,6 @@
-import unittest
 
 
 class Solution:
     def mySqrt(self, x: int) -> int:
+        print(x)
         
-        
-class TestSolution:
-    def TestSolution():
-        input_x = 4
