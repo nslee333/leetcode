@@ -13,8 +13,6 @@ func TestAdd(t *testing.T) {
 	}{
 		{testName: "Ex.1", inputA: "11", inputB: "1", output: "10101"},
 		{testName: "Ex.2", inputA: "1010", inputB: "1011", output: "10101"},
-		// {testName: "Ex.3", inputA: "11", inputB: "1", output: "10101"},
-		// {testName: "Ex.4", inputA: "11", inputB: "1", output: "10101"},
 	}
 
 	for _, c := range cases {
