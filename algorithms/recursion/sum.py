@@ -1,4 +1,4 @@
-# We need to sum the contents of the array
+# recursive function to sum the contents of the list
 
 def sum(list):
     if list == []:
