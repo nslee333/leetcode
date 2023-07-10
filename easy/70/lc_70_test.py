@@ -29,7 +29,7 @@ def runTest4():
     outputReturned = climbStairs(input)
     
     if outputReturned != expected:
-        print(f"Ex. 3: error: outputReturned {outputReturned}, expected {expected}, input {input}")
+        print(f"Ex. 4: error: outputReturned {outputReturned}, expected {expected}, input {input}")
         
 if __name__ == "__main__":
     runTest()
