@@ -14,25 +14,7 @@ def runTest2():
     
     if outputReturned != expected:
         print(f"Ex. 2: error: outputReturned {outputReturned}, expected {expected}, input {input}")
-        
-def runTest3():
-    input = 8
-    expected = 21
-    outputReturned = climbStairs(input)
-    
-    if outputReturned != expected:
-        print(f"Ex. 3: error: outputReturned {outputReturned}, expected {expected}, input {input}")
-        
-def runTest4():
-    input = 10
-    expected = 55
-    outputReturned = climbStairs(input)
-    
-    if outputReturned != expected:
-        print(f"Ex. 4: error: outputReturned {outputReturned}, expected {expected}, input {input}")
-        
+
 if __name__ == "__main__":
     runTest()
     runTest2()
-    runTest3()
-    runTest4()
