@@ -1,15 +1,16 @@
 from lc_83 import deleteDuplicates
 
 def runTest():
-    input = 2
-    expected = 2
+    input = [1,1,2]
+    expected = [1,2]
     outputReturned = deleteDuplicates(input)
+    
     if outputReturned != expected:
         print(f"Ex. 1: error: outputReturned {outputReturned}, expected {expected}, input {input}")
         
 def runTest2():
-    input = 3
-    expected = 3
+    input = [1,1,2,3,3]
+    expected = [1,2,3]
     outputReturned = deleteDuplicates(input)
     
     if outputReturned != expected:
