@@ -26,60 +26,30 @@ def convertLLtoArr(l1: ListNode):
 
 
 def addTwoNumbers(l1: ListNode, l2: ListNode) -> ListNode:
-    l1current = l1
-    l2current = l2
+    dummy = ListNode(0)
+    current = dummy
+    carry = 0
     
-    
-    current = []
-    while l1current != None and l2current != None:
-        # print(l1current.next)
-        # print(l2current.next)
-        if l1current.val + l2current.val < 10:
-            current.append(l1current.val + l2current.val)
-            
-            l1current = l1current.next
-            l2current = l2current.next
-            
-        else:
-            num = l1current.val + l2current.val
-            nums = [int(x) for x in str(num)]
-            current.append(nums[-1])
-            
-            if l1current.next != None:
-                l1current.next.val += nums[0]
-            else:
-                current.append(nums[0])
-            # print(current)
-            
-            l1current = l1current.next
-            l2current = l2current.next
-    
-    head = ListNode(val = 0, next = None)
-    head_current = head
-    
-    for i in range(len(current)):
-        
-        head_current.val = current[i]
-        
-        if i < len(current)-1 and current[i+1] != None:
-            head_current.next = ListNode(val = 0, next = None)
-        else:
-            head_current.next = None
-        head_current = head_current.next
+    while l1 or l2 or carry:
+        x = l1.val if l1 else 0
+        y = l2.val if l2 else 0
 
+        sum_val = carry + x + y
+        carry = sum_val // 10
+        digit = sum_val % 10
+        
+        current.next = ListNode(digit)
+        current = current.next
+        
+        if l1:
+            l1 = l1.next
+        if l2:
+            l2 = l2.next
+    
+    if carry > 0:
+        current.next = ListNode(carry)
+        
+    return dummy.next
 
-    
-    # x = head
-    # print("start here")
-    # print(current)
-    # while x != None:
-    #     print(x.val)
-    #     print(x.next)
-    #     x = x.next
-            
-            
-            
-    return head
-    
 
 
