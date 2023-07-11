@@ -8,7 +8,7 @@ def runTest():
     expected = [1,2,2,3,5,6]
     outputReturned = merge(nums1, m, nums2, n)
     if outputReturned != expected:
-        print(f"Ex. 1: error: outputReturned {outputReturned}, expected {expected}, nums1 {nums1} m {m} nums2 {nums2} n {n}")
+        print(f"Ex. 1: error: outputReturned {outputReturned}, expected {expected}, nums1 {nums1}, m {m}, nums2 {nums2}, n {n}")
         
 def runTest2():
     nums1 = [1]
@@ -19,7 +19,7 @@ def runTest2():
     outputReturned = merge(nums1, m, nums2, n)
     
     if outputReturned != expected:
-        print(f"Ex. 2: error: outputReturned {outputReturned}, expected {expected}, nums1 {nums1} m {m} nums2 {nums2} n {n}")
+        print(f"Ex. 2: error: outputReturned {outputReturned}, expected {expected}, nums1 {nums1}, m {m}, nums2 {nums2}, n {n}")
         
 def runTest3():
     nums1 = [0]
@@ -30,7 +30,7 @@ def runTest3():
     outputReturned = merge(nums1, m, nums2, n)
     
     if outputReturned != expected:
-        print(f"Ex. 2: error: outputReturned {outputReturned}, expected {expected}, nums1 {nums1} m {m} nums2 {nums2} n {n}")
+        print(f"Ex. 2: error: outputReturned {outputReturned}, expected {expected}, nums1 {nums1}, m {m}, nums2 {nums2}, n {n}")
 
 if __name__ == "__main__":
     runTest()
