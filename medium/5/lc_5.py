@@ -20,16 +20,20 @@ class Test(unittest.TestCase):
     def test(self):
         s = Solution()
         
-        for i, e in [("babad", "bab")]:
-            
+        input = "babad"
+        expected = "bab"
+        output = s.longestPalindrome(input)
+        
             if self.assertEqual(s.longestPalindrome(i), e) == False:
                 print(i,e)
                 
     def test2(self):
         s = Solution()
         
-        for i, e in [("string", "string")]:
-            
+        input = "cbbd"
+        expected = "bb"
+        output = s.longestPalindrome(input)
+        
             if self.assertEqual(s.longestPalindrome(i), e) == False:
                 print(i,e)
 
