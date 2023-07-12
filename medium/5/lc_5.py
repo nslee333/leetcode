@@ -20,7 +20,7 @@ class Test(unittest.TestCase):
     def test(self):
         s = Solution()
         
-        for i, e in [("string", "string")]:
+        for i, e in [("babad", "bab")]:
             
             if self.assertEqual(s.longestPalindrome(i), e) == False:
                 print(i,e)
