@@ -24,8 +24,7 @@ class Test(unittest.TestCase):
         expected = "bab"
         output = s.longestPalindrome(input)
         
-            if self.assertEqual(s.longestPalindrome(i), e) == False:
-                print(i,e)
+        self.assertEqual(output, expected)
                 
     def test2(self):
         s = Solution()
@@ -34,16 +33,7 @@ class Test(unittest.TestCase):
         expected = "bb"
         output = s.longestPalindrome(input)
         
-            if self.assertEqual(s.longestPalindrome(i), e) == False:
-                print(i,e)
+        self.assertEqual(output, expected)
 
-    def test3(self):
-        s = Solution()
-        
-        for i, e in [("string", "string")]:
-            
-            if self.assertEqual(s.longestPalindrome(i), e) == False:
-                print(i,e)
-    
 if __name__ == '__main__':
     unittest.main()
