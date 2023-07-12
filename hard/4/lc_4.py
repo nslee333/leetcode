@@ -31,9 +31,19 @@ def merge_sort(arr1, arr2):
         
     return merged
     
-
-
-
 def findMedianSortedArrays(nums1: List[int], nums2: List[int]) -> float:
     merged = merge_sort(nums1, nums2)
+    result = 0.0
+    
+    if len(merged) % 2 != 0:
+        location = len(merged) // 2
+        result = merged[location]
+        
+    else:
+        mergeLen = len(merged)
+        first = mergeLen // 2
+        sec = first - 1 
+        result = (merged[first] + merged[sec]) / 2
+        
+    return result
     
