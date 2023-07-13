@@ -1,36 +1,21 @@
-from file import fn
-
-def runTest():
-    input = 0
-
-    expected = 0
-
-    output = fn(input)
-    
-    if output != expected:
-        print(f"Ex. 1: error: output {output}, expected {expected}, input {input}")
+class Test(unittest.TestCase):
+    def test(self):
+        s = Solution()
         
-def runTest2():
-    input = 0
-
-    expected = 0
-
-    output = fn(input)
-    
-    if output != expected:
-        print(f"Ex. 2: error: output {output}, expected {expected}, input {input}")
+        input = "babad"
+        expected = "bab"
+        output = s.longestPalindrome(input)
         
-def runTest3():
-    input = 0
+        self.assertEqual(output, expected)
+                
+    def test2(self):
+        s = Solution()
+        
+        input = "cbbd"
+        expected = "bb"
+        output = s.longestPalindrome(input)
+        
+        self.assertEqual(output, expected)
 
-    expected = 0
-
-    output = fn(input)
-    
-    if output != expected:
-        print(f"Ex. 2: error: output {output}, expected {expected}, input {input}")
-
-if __name__ == "__main__":
-    runTest()
-    runTest2()
-    runTest3()
+if __name__ == '__main__':
+    unittest.main()
