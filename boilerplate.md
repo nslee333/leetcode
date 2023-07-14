@@ -1,5 +1,4 @@
 
-python test boilerplate
 
 class Test(unittest.TestCase):
     def test(self):
@@ -35,7 +34,6 @@ if __name__ == '__main__':
 
 
 
-go testing boilerplate
 
 package easy
 
