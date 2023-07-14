@@ -10,6 +10,7 @@ return the running sum of nums
 """
 
 class Solution:
+    # Results array approach
     def runningSum(self, nums):
         count = []
         count.append(nums[0])
@@ -19,6 +20,15 @@ class Solution:
                 count.append(count[i] + nums[i+1])
 
         return count
+    
+    # overwritten input approach
+    def runningSum2(self, nums):
+        i = 1
+        while i < len(nums):
+            nums[i] = nums[i] + nums[i-1]
+            i += 1
+
+        return nums  
 
 
 
