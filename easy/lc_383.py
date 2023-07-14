@@ -48,8 +48,10 @@ My though process got lost as I ran into a road block with not knowing what I ca
 class Solution:
    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
         
-        # This solution has an O(n + m) time complexity -> where n is the length of the magazine and and m is the length of the 
-        # note
+        # This solution has an O(n + m) time complexity -> n = magazine's length and m = note's length
+        # This solution has an O(n + m) space complexity -> because we created:
+        # mag -> list of magazine, note -> list of note, and hash which is a dictionary 
+        
         
         mag = list(magazine)
         note = list(ransomNote)
