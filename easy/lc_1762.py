@@ -20,7 +20,6 @@ class Solution:
             
             for bal in acc:
                 sum += bal
-                print(sum)
                 
             if sum > highest_total:
                 highest_total = sum
