@@ -59,6 +59,33 @@ class Test(unittest.TestCase):
         output = s.runningSum(input)
         
         self.assertEqual(output, expected)
+        
+    def test4(self):
+        s = Solution()
+        
+        input = [1,2,3,4]
+        expected = [1,3,6,10]
+        output = s.runningSum2(input)
+        
+        self.assertEqual(output, expected)
+                
+    def test5(self):
+        s = Solution()
+        
+        input = [1,1,1,1,1]
+        expected = [1,2,3,4,5]
+        output = s.runningSum2(input)
+        
+        self.assertEqual(output, expected)
+        
+    def test6(self):
+        s = Solution()
+        
+        input = [3,1,2,10,1]
+        expected = [3,4,6,16,17]
+        output = s.runningSum2(input)
+        
+        self.assertEqual(output, expected)
 
 if __name__ == '__main__':
     unittest.main()
