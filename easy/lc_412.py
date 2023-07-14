@@ -1,0 +1,62 @@
+import unittest
+from typing import List
+
+
+"""
+Leetcode # 412
+Given an integer n, return a string array answer (1-indexed) where:
+
+answer[i] == "FizzBuzz" if i is divisible by 3 and 5.
+answer[i] == "Fizz" if i is divisible by 3.
+answer[i] == "Buzz" if i is divisible by 5.
+answer[i] == i (as a string) if none of the above conditions are true.
+
+"""
+
+
+
+
+class Solution:
+    def fizzBuzz(self, n: int) -> List[str]:
+        return []
+
+
+
+
+
+
+
+
+
+
+
+class Test(unittest.TestCase):
+    def test(self):
+        s = Solution()
+        
+        input = 3
+        expected = ["1","2","Fizz"]
+        output = s.fizzBuzz(input)
+        
+        self.assertEqual(output, expected)
+                
+    def test2(self):
+        s = Solution()
+        
+        input = 5
+        expected = ["1","2","Fizz","4","Buzz"]
+        output = s.fizzBuzz(input)
+        
+        self.assertEqual(output, expected)
+        
+    def test2(self):
+        s = Solution()
+        
+        input = 15
+        expected = ["1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz","11","Fizz","13","14","FizzBuzz"]
+        output = s.fizzBuzz(input)
+        
+        self.assertEqual(output, expected)
+
+if __name__ == '__main__':
+    unittest.main()
