@@ -11,26 +11,23 @@ The richest customer is the customer that has the maximum wealth.
 """
 
 class Solution:
+    # O(N squared) time complexity because I have nested loops.
     def maximumWealth(self, accounts):
-        """
         highest_total = 0 
         
-        loo over accounts
-            loop over accounts
+        for acc in accounts:
+            sum = 0
             
-                sum = balances
+            for bal in acc:
+                sum += bal
+                print(sum)
                 
-                if sum > highest_total
-                    highest_total = sum
+            if sum > highest_total:
+                highest_total = sum
 
-        return higest_total
-        """
-        return 0
+        return highest_total
     
-    
-    
-    
-    
+
         
 class Test(unittest.TestCase):
     def test(self):
