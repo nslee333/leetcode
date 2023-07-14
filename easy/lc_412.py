@@ -18,16 +18,24 @@ answer[i] == i (as a string) if none of the above conditions are true.
 
 class Solution:
     def fizzBuzz(self, n: int) -> List[str]:
-        return []
-
-
-
-
-
-
-
-
-
+        result = []
+        
+        for i in range(1, n + 1):
+            if i < 3:
+                result.append(f"{i}")
+        
+            elif i % 3 == 0 and i % 5 == 0:
+                result.append("FizzBuzz")
+                
+            elif i % 3 == 0:
+                result.append("Fizz")
+                
+            elif i % 5 == 0:
+                result.append("Buzz")
+            else:
+                result.append(f"{i}")
+                
+        return result
 
 
 class Test(unittest.TestCase):
@@ -49,7 +57,7 @@ class Test(unittest.TestCase):
         
         self.assertEqual(output, expected)
         
-    def test2(self):
+    def test3(self):
         s = Solution()
         
         input = 15
