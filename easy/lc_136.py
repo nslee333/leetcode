@@ -14,28 +14,24 @@ You must implement a solution with a linear runtime complexity and use only cons
 """
 
 
-
-
 class Solution:
     def single_number(self, nums):
         result = 0
         hash = {}
         
-        # [3, 2]
-        # Counting instances of numbers in nums
         for i in range(len(nums)):
             if hash.get(nums[i]) == None:
-                hash[nums[i]] = 1
+                hash[nums[i]] = 0
                 
             if hash.get(nums[i]) != None:
                 hash[nums[i]] += 1
-        
-        for i in range(len(hash)):
-            print(hash.get(nums[i]), "numsi")
-            print(hash.get(i), "i")
-            if hash.get(nums[i]) == 1:
-                result = i
+            
+        for key, value in hash.items():
+            if value == 1:
+                result = key
                   
+        
+        return result
         
 # Try to use the XOR (^) operation, 
 # which can help you find the unique element in the array without using extra space.
