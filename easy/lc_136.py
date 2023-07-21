@@ -33,20 +33,13 @@ class Solution:
         
         return result
     
-    def single_number_2(self, num):
+    def single_number_2(self, nums):
         result = 0
         
-        
-        
-        
+        for num in nums:
+            result ^= num 
         
         return result
-
-
-
-
-
-
 
 
 
