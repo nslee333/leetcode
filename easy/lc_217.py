@@ -29,10 +29,7 @@ class Solution:
             
         if result == bool:
             result = False
-            
-
-        
-        
+                    
         return result
 
 
