@@ -37,7 +37,8 @@ class Solution:
                 result = i
                   
         
-
+# Try to use the XOR (^) operation, 
+# which can help you find the unique element in the array without using extra space.
 
         return result
 
