@@ -47,6 +47,9 @@ class Solution:
             result = True
         return result
     
+    def contains_duplicate_2(self, s, t):
+        return False
+    
     
             
 
@@ -73,13 +76,43 @@ class Test(unittest.TestCase):
         
         self.assertEqual(output, expected)
         
-    def test2(self):
+    def test3(self):
         s = Solution()
         
         input = "ab"
         input_2 = "a"
         expected = False
         output = s.contains_duplicate(input, input_2)
+        
+        self.assertEqual(output, expected)
+        
+    def test4(self):
+        s = Solution()
+        
+        input = "anagram"
+        input_2 = "nagaram"
+        expected = True
+        output = s.contains_duplicate_2(input, input_2)
+        
+        self.assertEqual(output, expected)
+                
+    def test5(self):
+        s = Solution()
+        
+        input = "rat"
+        input_2 = "car"
+        expected = False
+        output = s.contains_duplicate_2(input, input_2)
+        
+        self.assertEqual(output, expected)
+        
+    def test6(self):
+        s = Solution()
+        
+        input = "ab"
+        input_2 = "a"
+        expected = False
+        output = s.contains_duplicate_2(input, input_2)
         
         self.assertEqual(output, expected)
         
