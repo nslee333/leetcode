@@ -32,10 +32,14 @@ class Solution:
                   
         
         return result
+    
+    def single_number_2(self, num):
+        result = 0
         
-# Try to use the XOR (^) operation, 
-# which can help you find the unique element in the array without using extra space.
-
+        
+        
+        
+        
         return result
 
 
@@ -71,6 +75,33 @@ class Test(unittest.TestCase):
         input = [1]
         expected = 1
         output = s.single_number(input)
+        
+        self.assertEqual(output, expected)
+        
+    def test4(self):
+        s = Solution()
+        
+        input = [2,2,1]
+        expected = 1
+        output = s.single_number_2(input)
+        
+        self.assertEqual(output, expected)
+                
+    def test5(self):
+        s = Solution()
+        
+        input = [4,1,2,1,2]
+        expected = 4
+        output = s.single_number_2(input)
+        
+        self.assertEqual(output, expected)
+
+    def test6(self):
+        s = Solution()
+        
+        input = [1]
+        expected = 1
+        output = s.single_number_2(input)
         
         self.assertEqual(output, expected)
 
