@@ -51,10 +51,8 @@ class Solution:
         if len(s) != len(t):
             return False
         
-        s_arr = [*s]
-        t_arr = [*t]
-        hash_s = {}
-        hash_t = {}
+        s_arr, t_arr = [*s], [*t]
+        hash_s, hash_t = {}, {}
 
         for s in s_arr:
             if hash_s.get(s) == None:
