@@ -48,11 +48,35 @@ class Solution:
         return result
     
     def contains_duplicate_2(self, s, t):
-        return False
-    
-    
-            
+        # result = bool
+        if len(s) != len(t):
+            return False
+        
+        s_arr = [*s]
+        t_arr = [*t]
+        hash_s = {}
+        hash_t = {}
 
+        for s in s_arr:
+            if hash_s.get(s) == None:
+                hash_s[s] = 0
+            if hash_s.get(s) != None:
+                hash_s[s] += 1
+                
+        for t in t_arr:
+            if hash_t.get(t) == None:
+                hash_t[t] = 0
+            if hash_t.get(t) != None:
+                hash_t[t] += 1
+        
+        for key, value in hash_s.items():
+            if hash_t.get(key) == None:
+                return False
+            if hash_t.get(key) == value:
+                continue
+            if hash_t.get(key) != value:
+                return False
+        return True
 
 
 class Test(unittest.TestCase):
@@ -111,6 +135,15 @@ class Test(unittest.TestCase):
         
         input = "ab"
         input_2 = "a"
+        expected = False
+        output = s.contains_duplicate_2(input, input_2)
+        
+        self.assertEqual(output, expected)
+    def test7(self):
+        s = Solution()
+        
+        input = "aacc"
+        input_2 = "ccac"
         expected = False
         output = s.contains_duplicate_2(input, input_2)
         
