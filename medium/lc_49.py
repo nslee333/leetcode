@@ -1,3 +1,4 @@
+from collections import defaultdict
 import unittest
 
 
@@ -11,30 +12,16 @@ Given an array of strings, group the anagrams together. You can return the answe
 
 class Solution:
     def group_anagrams(self, arr):
-        result = []
-        a = []
-        for item in arr:
-            x = "".join(sorted(item))
-            a.append(x)
-        a.sort()
-        print(a)
-        
-        k = 0
-        l = 1
-        
-        temp = []
-        for i in range(len(a)):
-            if l < len(a)-1 and k < len(a)-1:
-                if a[k] == a[l]:
-                    temp.append(a[k])
-                    temp.append(a[l])
-                
-                k += 2
-                l += 2
-            result.append(temp)    
-        print(result)
-        return result
+        res = defaultdict(list)
 
+        for s in arr:
+            count = [0] * 26
+            
+            for c in s:
+                count[ord(c) - ord("a")] += 1
+                
+            res[tuple(count)].append(s)          
+        return res.values() 
 
 
 class Test(unittest.TestCase):
