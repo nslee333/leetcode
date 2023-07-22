@@ -48,7 +48,6 @@ class Solution:
         return result
     
     def contains_duplicate_2(self, s, t):
-        # result = bool
         if len(s) != len(t):
             return False
         
