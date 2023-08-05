@@ -4,25 +4,26 @@ class Solution:
             return False
 
         dict = {
-            '(': ')',
-            '[': ']',
-            '{': '}',
+            ')': '(',
+            ']': '[',
+            '}': '{',
         }
 
         stack = []
         s = [*s]
 
         for elem in s:
-            if elem in dict.keys():
+            if elem in dict.values():
                 stack.append(elem)
-            elif elem in dict.values():
+            elif elem in dict.keys():
                 if len(stack) == 0: return False
 
                 prev = stack.pop()
-                if dict.get(prev) == elem:
+                if dict.get(elem) == prev:
                     continue
                 else:
                     return False
+                
         if len(stack) == 0:
             return True
         else:
