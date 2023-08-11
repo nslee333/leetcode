@@ -1,5 +1,5 @@
 class Solution:
-    def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
+    def dailyTemperatures(self, temperatures) :
         result = [0] * len(temperatures)
         stack = []
 
@@ -13,7 +13,7 @@ class Solution:
 # same concept but using enumerate, above is simpler.
 
 # class Solution:
-# def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
+# def dailyTemperatures(self, temperatures)
 #     stack = []
 #     result = [0] * len(temperatures)
 

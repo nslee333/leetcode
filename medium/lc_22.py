@@ -1,5 +1,5 @@
 class Solution:
-    def generateParenthesis(self, n: int) -> List[str]:
+    def generateParenthesis(self, n):
         # only add open paranthesis if open < n
         # only add a closing paranthesis if closed < open
         # valid IF open == closed == n
