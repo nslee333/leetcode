@@ -9,3 +9,4 @@ two pointer algorithm
   -> left pointer at 0, right pointer at end of array
   -> if left is smaller than right, increase left
   -> if right is smaller than left, decrease right
+  -> loop while left is smaller than right
