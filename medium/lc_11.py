@@ -13,12 +13,27 @@ Return the maximum amount of water a container can store.
 Notice that you may not slant the container.
 
 """
-
-
 class Solution:
-    def single_number(self, nums):
-       return 0
+    def maxArea(self, height):
+        largest_area = 0
+        i = 0
+        j = len(height) - 1
 
+        while i < j:
+            print(largest_area)
+            if height[i] < height[j]:
+                if height[i] * (j - i) > largest_area:
+                    largest_area = height[i] * (j - i)
+                i += 1
+            elif height[i] > height[j]:
+                if height[j] * (j - i) > largest_area:
+                    largest_area = height[j] * (j - i)
+                j -= 1
+            elif height[i] == height[j]:
+                if height[i] * (j - i) > largest_area:
+                    largest_area = height[i] * (j - i)
+                j -= 1
+        return largest_area
 
 
 class Test(unittest.TestCase):
@@ -27,7 +42,7 @@ class Test(unittest.TestCase):
         
         input = [1,8,6,2,5,4,8,3,7]
         expected = 49
-        output = s.single_number(input)
+        output = s.maxArea(input)
         
         self.assertEqual(output, expected)
                 
@@ -36,7 +51,7 @@ class Test(unittest.TestCase):
         
         input = [1,1]
         expected = 1
-        output = s.single_number(input)
+        output = s.maxArea(input)
         
         self.assertEqual(output, expected)
 
