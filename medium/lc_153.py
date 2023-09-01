@@ -11,7 +11,7 @@ class Solution:
             m = (l + r) // 2
             res = min(res, nums[m])
 
-            if nums[l] <= nums[m]:
+            if nums[m] >= nums[l]:
                 l = m + 1
             else:
                 r = m - 1
