@@ -46,4 +46,25 @@ def findMedianSortedArrays(nums1: List[int], nums2: List[int]) -> float:
         result = (merged[first] + merged[sec]) / 2
         
     return result
+
+
+# def merge_sort(arr1, arr2):
+
+# class Solution:
+#     def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
+#         sorted_arr = merge_sort(nums1, nums2)
+
+#         if len(sorted_arr) % 2 == 0:
+#             a = (len(sorted_arr) - 1) // 2
+#             b = a + 1
+#             return (sorted_arr[a] + sorted_arr[b]) / 2
+#         else:
+#             index = (len(sorted_arr) - 1) // 2
+#             return sorted_arr[index]
+
+
+
+
+
+
     
