@@ -1,32 +1,46 @@
-def test(s, t):
-    
+def hash_fn(t):
     hash = {}
     for i in range(len(t)):
         if hash.get(t[i]): 
             hash[t[i]] += 1
         else: 
             hash[t[i]] = 1
-    # # all_zero_values = all(value == 0 for value in hash.values())
+    return hash
+
+
+
+def test(s, t):
+    
+    hash = hash_fn(t)
+    
     res, temp  = [], []
     l = 0
     r = 0
-    while r < len(s):
-        # print(temp)
-        print(res)
-        print(l, "l")
-        print(r, "r")
-        # print(hash.values())
+    t_seen = False
+    while l < len(s):
+        # print(len(s))
+        print(l, "l", r, "r")
+        if r >= len(s): break
         if all(value == 0 for value in hash.values()):
             res.append([len(temp), "".join(temp)])
             temp.clear()
+            
             if hash.get(s[l]) == 0:
                 hash[s[l]] += 1
+            hash = hash_fn(t)
+                
             l += 1
             r = l
+            t_seen = False
+            
         elif hash.get(s[r]):
             hash[s[r]] -= 1
-        temp.append(s[r])
-        # this isn't right, b/c we only want to add non-t chars after we've seen one.
+            t_seen = True
+            
+        if t_seen:
+            temp.append(s[r])
+        
+        # ^ Now we're not fully exploring the array since r never
         r += 1
     
     
@@ -37,8 +51,6 @@ def test(s, t):
         return ""
             
        
-
-
 
 if __name__ == '__main__':
     print(test("ADOBECODEBANC", "ABC"))
