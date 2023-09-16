@@ -1,56 +1,31 @@
-def hash_fn(t):
-    hash = {}
-    for i in range(len(t)):
-        if hash.get(t[i]): 
-            hash[t[i]] += 1
-        else: 
-            hash[t[i]] = 1
-    return hash
-
-
-
-def test(s, t):
+class Solution:
+    def minWindow(self, s: str, t: str) -> str:
+        if t == "": return ""
     
-    hash = hash_fn(t)
-    
-    res, temp  = [], []
-    l = 0
-    r = 0
-    t_seen = False
-    while l < len(s):
-        # print(len(s))
-        print(l, "l", r, "r")
-        if r >= len(s): break
-        if all(value == 0 for value in hash.values()):
-            res.append([len(temp), "".join(temp)])
-            temp.clear()
-            
-            if hash.get(s[l]) == 0:
-                hash[s[l]] += 1
-            hash = hash_fn(t)
-                
-            l += 1
-            r = l
-            t_seen = False
-            
-        elif hash.get(s[r]):
-            hash[s[r]] -= 1
-            t_seen = True
-            
-        if t_seen:
-            temp.append(s[r])
+        countT, window = {}, {}
         
-        # ^ Now we're not fully exploring the array since r never
-        r += 1
-    
-    
-    if len(res) > 0:
-        x = min(res)
-        return x
-    else:
-        return ""
+        for c in t:
+            countT[c] = 1 + countT.get(c, 0)
+        
+        have, need = 0, len(countT)
+        res, resLen = [-1, -1], float("infinity")
+        l = 0
+        for r in range(len(s)):
+            c = s[r]
+            window[c] = 1 + window.get(c, 0)
             
-       
-
-if __name__ == '__main__':
-    print(test("ADOBECODEBANC", "ABC"))
+            if c in countT and window[c] == countT[c]:
+                have += 1
+            
+            while have == need:
+                # update result
+                if (r - l + 1) < resLen:
+                    res = [l , r]
+                    resLen = (r - l + 1)
+                # pop from the left
+                window[s[l]] -= 1
+                if s[l] in countT and window[s[l]] < countT[s[l]]:
+                    have -= 1
+                l += 1
+        l, r = res
+        return s[l:r+1] if resLen != float("infinity") else "" 
