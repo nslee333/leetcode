@@ -27,3 +27,37 @@ class Solution:
                 rev_current = rev_current.next
 
         return reversed_list
+    
+    
+# #  & This is my recursive idea, not done yet.
+    
+    
+# # Definition for singly-linked list.
+# # class ListNode:
+# #     def __init__(self, val=0, next=None):
+# #         self.val = val
+# #         self.next = next
+# class Solution:
+            
+#     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        
+#         reversed_list = ListNode()
+
+#         reversed_list = recursive(head)
+
+#         return reversed_list
+
+
+
+# def recursive(head):
+#     print(head)
+#     # current = head
+#     if head != None:
+#         if head.next == None:
+#             node = ListNode()
+#             node.val = head.val
+#             return node
+        
+#         elif head.next == ListNode:
+#             head.next = recursive(head.next)
+#             head.val = head.val
