@@ -15,14 +15,15 @@ class Solution:
             temp.append(current.val)
             current = current.next
         
-        rev_current = reversed_list        
-        for i in range(len(temp) - 1, -1, -1):
-            rev_current.val = temp[i]
-            if i == 0:
+        rev_current = reversed_list
+        while rev_current != None:
+            
+            rev_current.val = temp.pop()
+            if len(temp) == 0:
                 rev_current.next = None
+                break
             else:
                 rev_current.next = ListNode()
                 rev_current = rev_current.next
-            print(reversed_list)
 
         return reversed_list
