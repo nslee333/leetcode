@@ -2,62 +2,27 @@
 # class ListNode:
 #     def __init__(self, val=0, next=None):
 #         self.val = val
-#         self.next = next
+#         self.next = next 
+
+# this is my solution :)
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        if head == None:
-            return None
-            
-        temp = []
-        current = head
-        reversed_list = ListNode()
-        while current != None:
-            temp.append(current.val)
-            current = current.next
-        
-        rev_current = reversed_list
-        while rev_current != None:
-            
-            rev_current.val = temp.pop()
-            if len(temp) == 0:
-                rev_current.next = None
-                break
-            else:
-                rev_current.next = ListNode()
-                rev_current = rev_current.next
+      if head == None: return None
+      current = head
+      li = []
 
-        return reversed_list
-    
-    
-# #  & This is my recursive idea, not done yet.
-    
-    
-# # Definition for singly-linked list.
-# # class ListNode:
-# #     def __init__(self, val=0, next=None):
-# #         self.val = val
-# #         self.next = next
-# class Solution:
-            
-#     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        
-#         reversed_list = ListNode()
+      while current != None:
+        li.append(current.val)
+        current = current.next
+      li.reverse()
 
-#         reversed_list = recursive(head)
-
-#         return reversed_list
-
-
-
-# def recursive(head):
-#     print(head)
-#     # current = head
-#     if head != None:
-#         if head.next == None:
-#             node = ListNode()
-#             node.val = head.val
-#             return node
-        
-#         elif head.next == ListNode:
-#             head.next = recursive(head.next)
-#             head.val = head.val
+      rev = ListNode()
+      rev_cur = rev
+      for i in range(len(li)):
+        rev_cur.val = li[i]
+        if i == len(li) - 1:
+          rev_cur.next = None
+        else:
+          rev_cur.next = ListNode()
+        rev_cur = rev_cur.next
+      return rev
