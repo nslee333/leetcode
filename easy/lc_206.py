@@ -26,3 +26,18 @@ class Solution:
           rev_cur.next = ListNode()
         rev_cur = rev_cur.next
       return rev
+
+
+
+# Neetcode solution:
+
+# class Solution:
+    # def reverseList(self, head: ListNode) -> ListNode:
+    #     prev, curr = None, head
+
+    #     while curr:
+    #         temp = curr.next
+    #         curr.next = prev
+    #         prev = curr
+    #         curr = temp
+    #     return prev
