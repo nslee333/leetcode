@@ -5,16 +5,10 @@
 #         self.next = next
 
 
-# works, but too slow
+# apparently this does work? leetcode is weird
 
 class Solution:
     def reorderList(self, head: Optional[ListNode]) -> None:
-        """
-        Do not return anything, modify head in-place instead.
-        """
-
-        # 1,2,3,4,5
-        # 1,5,2,4,3
 
         trav = head
         arr = []
@@ -27,7 +21,6 @@ class Solution:
         reord = head
         while i <= j:
             
-            # print(reord)                        
             reord.val = arr[i]
             i += 1
             if reord.next:
@@ -36,5 +29,3 @@ class Solution:
                 reord.val = arr[j]
                 j -= 1
             reord = reord.next
-        # print(head)
-        # print(head)                                                 
