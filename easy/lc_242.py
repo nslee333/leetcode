@@ -9,6 +9,34 @@ Given two strings s and t, return true if t is an anagram of s and false otherwi
 
 """
 
+# faster solution, uses less memory
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        if len(s) != len(t): return False
+
+        dict = {}
+
+        for item in s:
+            if item in dict:
+                dict[item] += 1
+            else:
+                dict[item] = 1
+
+        for item in t:
+            if item not in dict:
+                return False
+            dict[item] -= 1
+            if dict[item] < 0:
+                return False
+        
+        for item in dict.values():
+            if item > 0:
+                return False
+        return True
+
+
+
+
 
 
 class Solution:
