@@ -1,4 +1,4 @@
-s = ""
+s = "fdsfdsf"
 
-print([s.split()])
+print(s.split(""))
 
