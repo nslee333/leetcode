@@ -12,7 +12,6 @@ class Solution:
     
 
 
-# my solution, 3ms
 class Solution:
     def isPalindrome(self, s: str) -> bool:
         # filter out non-alphanumeric characters, convert to lowercase
@@ -26,7 +25,7 @@ class Solution:
         p_2 = len(letters) - 1
 
         while p_1 < p_2:
-            if s[p_1] == s[p_2]:
+            if letters[p_1] == letters[p_2]:
                 p_1 += 1
                 p_2 -= 1
                 if p_1 == p_2:
