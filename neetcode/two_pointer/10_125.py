@@ -34,3 +34,12 @@ class Solution:
             else:
                 return False
         return True
+    
+
+# way cleaner, not really faster though
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        letters = ''.join(filter(str.isalnum, s)).lower()
+        letters_copy = letters[::-1]
+
+        return letters == letters_copy
