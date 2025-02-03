@@ -20,7 +20,6 @@ class Solution:
                     temp = x * y
                 stack.append(temp)
 
-                
             else:
                 stack.append(tokens[i])
         return int(stack[-1])
