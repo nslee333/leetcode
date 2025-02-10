@@ -1,4 +1,15 @@
 
+
+
+
+
+
+
+
+
+
+
+
 # my solution with GPT, we walked through the solution together.
 
 # the trick is to shrink the window while the condition is met

@@ -1,5 +1,10 @@
 
-# this one is much better, 19ms runtime, the sorting in the old one was horrid
+
+
+
+# my solution: this one is much better, 19ms runtime, the sorting in the old one was horrid
+#  this one is using a hashmap with a dynamic sliding window, 
+# however this isn't as efficient as a fixed-size sliding window
 class Solution:
     def checkInclusion(self, s1: str, s2: str) -> bool:
 
@@ -28,12 +33,7 @@ class Solution:
         return s1_count == s2_count
 
 
-
-
-
-
-
-
+# my solution
 # dog slow LOL, like 3045MS 😅 can't believe it passed LMAO
 class Solution:
     def checkInclusion(self, s1: str, s2: str) -> bool:
