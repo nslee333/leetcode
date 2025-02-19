@@ -1,5 +1,5 @@
 
-# so technically this passes the test cases for leetcode, 
+# so technically this passes the test cases for leetcode with a O(n) time complexity
 
 # but it demands a log(n * m) time complexity solution, so technially this doesn't count
 class Solution:
