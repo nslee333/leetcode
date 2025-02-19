@@ -1,4 +1,8 @@
 
+
+# https://leetcode.com/problems/binary-search/
+# these are considered iterative binary search
+
 # Neetcode solution
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
