@@ -1,0 +1,26 @@
+Common time complexities:
+- Constant time O(1)
+  - Runtime does not change with input size
+  - Ex. arr[i] look up is constant time
+- Logarithmic time O(log n)
+  - runtime grows logarithmically with input size
+  - Ex. Binary search
+- Linear time O(n)
+  - runtime grows proportionally with input size
+  - Looping through an array
+- Linearrithmic time O(n log n)
+  - Common in efficient sorting algorithms
+  - Merge sort
+- Quadratic time O(N^2)
+  - runtime grows proportionally to the square of the input size
+  - Nested loops
+- Cubic Time O(N^3)
+  - runtime grows porportionally to the cube of the input size
+  - Some brute-force algorithms with 3 nested loops
+- Exponential time (2^n)
+  - Runtime doubles with each additional input element
+  - Recursive fibonacci
+- Factorial time O(n!)
+  - Runtime grows factorially, extreamely inefficient
+  - Brute force permutations, traveling salesman problem
+  - 
