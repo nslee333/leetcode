@@ -4,47 +4,31 @@
 # class ListNode:
 #     def __init__(self, val=0, next=None):
 #         self.val = val
-#         self.next = next
-class Solution:
+from typing import Optional
+
+# Definition for singly-linked list.
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.next = next
+
     def reorderList(self, head: Optional[ListNode]) -> None:
-        """
-        Do not return anything, modify head in-place instead.
-        """
+        slow, fast = head, head
 
-        res = head
+        temp = None
+        while fast and fast.next:
+            temp = fast
+            fast = fast.next
 
-        count = 0
+            temp = fast
+            fast = fast.next
 
-        current = head
-        while current:
-            count += 1
-            current = current.next
+            slow = slow.next
         
-        n_elements = math.ceil(count // 2)
+        # reverse the 2nd list
 
-        count = 0
-        current = head
-        array = []
+        temp = None
+        prev = None
 
-        while current:
-            if count >= n_elements:
-                array.insert(0, current.val)
-
-            count += 1
-            current = current.next
-        print(array)
-
-        count = 0
-        temp = 0
-        current = res
-        while current:
-            if count % 2 == 0:
-                temp = current.val
-                current.val = array.pop(0)
-            elif count % 2 > 0 and count is not 0:
-                current.val = temp
-                
-            count += 1
-            current = current.next
-        return res
-        
+        while slow:
+            temp = slow
+            slow = slow.next
