@@ -1,5 +1,6 @@
 # concatenation of array
 
+# linear time O(n + n) so O(n) and space is the same
 class Solution:
     def getConcatenation(self, nums: List[int]) -> List[int]:
         
@@ -11,10 +12,9 @@ class Solution:
             count += 1
 
         return ans
-        
-        
-        
+    
+    
+# linear time & space
 class Solution:
     def getConcatenation(self, nums: List[int]) -> List[int]:
-        
         return nums + nums
