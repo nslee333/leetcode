@@ -12,3 +12,13 @@
 
 array = []
 
+array.append("item")
+
+array.pop()
+
+n = 1
+
+slicing = array[n:n]
+
+
+
