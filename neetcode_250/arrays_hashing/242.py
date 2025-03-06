@@ -1,8 +1,6 @@
 # valid anagram
 
 # optimal hash table solution
-
-
 # linear time O(n + m) & constant space (since 26 letters in alphabet)
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:     
