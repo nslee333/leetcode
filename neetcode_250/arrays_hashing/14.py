@@ -18,7 +18,7 @@ class Solution:
         return res
     
     
-# neetcode vertical scanning linear time & space
+# neetcode vertical scanning sol, linear time & space
 class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
         res = ""
