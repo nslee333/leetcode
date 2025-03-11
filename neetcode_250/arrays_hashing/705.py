@@ -1,17 +1,38 @@
 
 
+# horribly slow implementation, everything is linear runtime
+class MyHashSet:
 
+    def __init__(self):
+        self.table = []
+        
 
+    def add(self, key: int) -> None:
+        hash_key = hash(key)
 
+        key_in_table = False
+        for i, (table_key, value) in enumerate(self.table):
+            if hash_key == table_key:
+                key_in_table = True
 
+        if key_in_table == False:
+            self.table.append((hash_key, key))
 
+    
+    def remove(self, key: int) -> None:
+        hash_key = hash(key)
 
+        for i, (table_key, value) in enumerate(self.table):
+            if hash_key == table_key:
+                del self.table[i]
+        
+    def contains(self, key: int) -> bool:
+        hash_key = hash(key)
 
-
-
-
-
-
+        for i, (table_key, value) in enumerate(self.table):
+            if hash_key == table_key:
+                return True
+        return False
 
 
 # design hash set
