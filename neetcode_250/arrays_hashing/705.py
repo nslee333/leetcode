@@ -1,5 +1,67 @@
 
 
+# better idea with binary search
+class MyHashSet:
+
+    def __init__(self):
+        self.arr = []
+
+    # log n
+    def binary_search(self, arr: list, target: int) -> int:
+
+        l, r = 0, len(arr) - 1
+        mid = l + r // 2
+
+        while l <= r:
+            mid = (l + r) // 2
+
+            if arr[mid] == target:
+                return mid
+            elif arr[mid] < target:
+                l = mid + 1
+            else:
+                r = mid - 1
+                mid
+            
+        return -1
+
+    # log n & n log n
+    def add(self, key: int) -> None:
+
+        i = self.binary_search(self.arr, key)
+
+        if i == -1:
+            self.arr.append(key)
+
+        self.arr = sorted(self.arr)
+
+    # log n
+    def remove(self, key: int) -> None:
+
+        i = self.binary_search(self.arr, key)
+
+        if i == -1: 
+            return None
+        else:
+            del self.arr[i]
+
+    # log n
+    def contains(self, key: int) -> bool:
+
+        i = self.binary_search(self.arr, key)
+
+        if i == -1:
+            return False
+        return True
+
+
+
+
+
+
+
+
+
 # horribly slow implementation, everything is linear runtime
 class MyHashSet:
 
