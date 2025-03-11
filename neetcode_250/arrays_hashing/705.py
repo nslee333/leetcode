@@ -1,3 +1,5 @@
+# hash set
+
 
 # with neetcode hint, constant time best case O(1), linear runtime O(N) worst case if bucket (linked list) has N elements
 # linear space O(n)
