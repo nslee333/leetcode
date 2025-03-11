@@ -1,4 +1,57 @@
 
+# with neetcode hint, constant time best case O(1), linear runtime O(N) worst case if bucket (linked list) has N elements
+# linear space O(n)
+class MyHashSet:
+
+    def __init__(self):
+        self.arr = [None] * 10_000 
+
+
+    def add(self, key: int) -> None:
+        hash = int(key % len(self.arr))
+
+        if self.arr[hash]:
+            current = self.arr[hash]
+            prev = None
+            while current:
+                if current.val == key:
+                    return
+                prev = current
+                current = current.next
+            node = ListNode()
+            node.val = key
+            prev.next = node
+        else:
+            self.arr[hash] = ListNode()
+            self.arr[hash].val = key
+  
+    def remove(self, key: int) -> None:
+        hash = int(key % len(self.arr))
+
+        if self.arr[hash]:
+            current = self.arr[hash]
+            prev = None
+            while current:
+                if current.val == key:
+                    if prev:
+                        prev.next = prev.next.next
+                    else:
+                        self.arr[hash] = current.next
+                prev = current
+                current = current.next
+ 
+ 
+    def contains(self, key: int) -> bool:
+        hash = int(key % len(self.arr))
+
+
+        if self.arr[hash]:
+            current = self.arr[hash]
+            while current:
+                if current.val == key:
+                    return True
+                current = current.next
+        return False
 
 # better idea with binary search
 class MyHashSet:
