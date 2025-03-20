@@ -8,7 +8,6 @@ class Solution:
         res = ""
         for item in strs:
             res += (item + "\u000c")
-        print(res, "jgfj")
         return res
 
     def decode(self, s: str) -> List[str]:
