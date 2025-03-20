@@ -1,5 +1,40 @@
 
+# neetcode solution,
+# linear time and space
 
+# encoder: at the beginning of each string, append length and # as a delimiter
+
+# decoder: look for length# delimiter, find that slice, append to array
+#          and return array
+class Solution:
+
+    def encode(self, strs: List[str]) -> str:
+        res = ""
+        for s in strs:
+            res += str(len(s)) + "#" + s
+        
+        return res
+
+
+    def decode(self, s: str) -> List[str]:
+        res = []
+        i = 0
+
+        print(s)
+
+        while i < len(s):
+            j = i
+            while s[j] != '#':
+                j += 1
+            length = int(s[i:j])
+            print(length)
+            i = j + 1
+            j = i + length
+            res.append(s[i:j])
+            i = j
+        return res
+    
+    
 # I was able to make this work completely on accident
 # linear space & time
 class Solution:
