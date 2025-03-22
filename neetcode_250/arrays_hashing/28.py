@@ -12,7 +12,7 @@ class Solution:
             if j == m:
                 return i
         return -1
-# my brain is tired, so we're calling it.
+
 
 # this attempt was using a hashtable, but that's a flawed approach since hashtables in python are unordered.
 class Solution:
@@ -34,8 +34,6 @@ class Solution:
             else:
                 window.pop()
                 window.append()
-
-
 
 
 # find the index of the first occurance in a string
