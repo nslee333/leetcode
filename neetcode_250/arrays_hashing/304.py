@@ -12,9 +12,6 @@ class NumMatrix:
                 above = self.sumMat[r][c + 1]
                 self.sumMat[r + 1][c + 1] = prefix + above
 
-    
-
-
     def sumRegion(self, row1: int, col1: int, row2: int, col2: int) -> int:
         row1, col1, row2, col2 = row1 + 1, col1 + 1, row2 + 1, col2 + 1
         bottomRight = self.sumMat[row2][col2]
